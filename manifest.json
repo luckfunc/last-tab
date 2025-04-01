@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Last Tab",
+  "version": "1.0",
+  "description": "Marks the last visited tab on the same website",
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

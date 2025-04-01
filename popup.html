@@ -1,0 +1,176 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Last Tab</title>
+  <style>
+		body {
+			width: 350px;
+			font-family: Arial, sans-serif;
+			padding: 15px;
+			margin: 0;
+		}
+
+		h2 {
+			margin-top: 0;
+			color: #333;
+			border-bottom: 1px solid #eee;
+			padding-bottom: 8px;
+		}
+
+		.domain-list {
+			max-height: 400px;
+			overflow-y: auto;
+		}
+
+		.domain-item {
+			margin-bottom: 12px;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			background-color: #f9f9f9;
+		}
+
+		.domain-header {
+			display: flex;
+			align-items: center;
+			margin-bottom: 8px;
+		}
+
+		.favicon {
+			width: 16px;
+			height: 16px;
+			margin-right: 8px;
+		}
+
+		.domain-name {
+			font-weight: bold;
+			flex-grow: 1;
+		}
+
+		.tab-info {
+			margin-left: 24px;
+		}
+
+		.tab-title {
+			font-weight: bold;
+			margin-bottom: 4px;
+			word-break: break-word;
+		}
+
+		.tab-url {
+			color: #666;
+			font-size: 12px;
+			word-break: break-all;
+			margin-bottom: 4px;
+		}
+
+		.timestamp {
+			font-size: 11px;
+			color: #999;
+			margin-bottom: 8px;
+		}
+
+		.action-buttons {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		button {
+			padding: 6px 10px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 12px;
+			transition: background-color 0.2s;
+		}
+
+		.goto-btn {
+			background-color: #4285F4;
+			color: white;
+		}
+
+		.goto-btn:hover {
+			background-color: #3367D6;
+		}
+
+		.clear-btn {
+			background-color: #f1f1f1;
+			color: #666;
+			margin-left: 8px;
+		}
+
+		.clear-btn:hover {
+			background-color: #e4e4e4;
+		}
+
+		.color-indicator {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			background-color: #E8F0FE;
+			border-radius: 50%;
+			margin-right: 6px;
+			border: 1px solid #ccc;
+		}
+
+		.settings-area {
+			margin-top: 15px;
+			padding-top: 10px;
+			border-top: 1px solid #eee;
+		}
+
+		.settings-heading {
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+
+		.color-picker {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 5px;
+			margin-bottom: 10px;
+		}
+
+		.color-option {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			cursor: pointer;
+			border: 1px solid #ccc;
+		}
+
+		.color-option.selected {
+			border: 2px solid #333;
+		}
+
+		.no-domains {
+			color: #666;
+			font-style: italic;
+			padding: 20px;
+			text-align: center;
+			border: 1px dashed #ddd;
+			border-radius: 4px;
+		}
+  </style>
+</head>
+<body>
+<h2>Marked Tabs</h2>
+<div id="domains-container">Loading...</div>
+
+<div class="settings-area">
+  <div class="settings-heading">Highlight Color</div>
+  <div id="color-picker" class="color-picker">
+    <div class="color-option" style="background-color: #E8F0FE;" data-color="#E8F0FE" title="Light Blue"></div>
+    <div class="color-option" style="background-color: #FFEBEE;" data-color="#FFEBEE" title="Light Red"></div>
+    <div class="color-option" style="background-color: #E8F5E9;" data-color="#E8F5E9" title="Light Green"></div>
+    <div class="color-option" style="background-color: #FFF8E1;" data-color="#FFF8E1" title="Light Yellow"></div>
+    <div class="color-option" style="background-color: #F3E5F5;" data-color="#F3E5F5" title="Light Purple"></div>
+  </div>
+  <button id="clear-all-btn" class="clear-btn">Clear All Marks</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
