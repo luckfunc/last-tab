@@ -2,6 +2,9 @@
 
 **Last Tab** is a lightweight Chrome extension that helps you remember the last visited tab on the same website. It's perfect for users who often open multiple tabs from the same domain and want to easily return to where they left off.
 
+## 📸 preview
+![preview](assets/preview.png)
+
 ## 🧠 Features
 
 - 🔖 Automatically highlights the last visited tab of a specific website
